@@ -14,3 +14,61 @@ id = "runtime"
 file = "crates/horizon-client-render/src/options_file.rs"
 name = "subsense_runtime"
 source = "runtime.rs"
+
+# options.txt: keep, set and write negative mouseSensitivity values.
+[[module]]
+id = "file"
+file = "crates/horizon-client-render/src/options_file.rs"
+name = "subsense"
+source = "options_file.rs"
+
+# `OptionsFile::apply` finishes the load; keep the negative mouseSensitivity
+# that the vanilla UnitDouble codec discarded in `try_apply`.
+[[injection]]
+id = "parse"
+kind = "OVERWRITE"
+target = "horizon_client_render::options_file::OptionsFile::apply"
+helper = "parse.rs"
+bindings = [
+  { name = "file", ty = "&mut OptionsFile", value = "&mut *self" },
+  { name = "raw", ty = "&std::collections::HashMap<String, String>", value = "raw" },
+]
+
+# `OptionsFile::serialize` omits a negative mouseSensitivity because the
+# UnitDouble encoder refuses it; append the exact stored value.
+[[injection]]
+id = "serialize"
+kind = "RETURN"
+target = "horizon_client_render::options_file::OptionsFile::serialize"
+helper = "serialize.rs"
+bindings = [
+  { name = "out", ty = "String", value = "$value" },
+  { name = "file", ty = "&OptionsFile", value = "&*self" },
+]
+
+# `OptionsFile::set` validates mouseSensitivity with UnitDouble; write the
+# extended range directly instead.
+[[injection]]
+id = "set"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client_render::options_file::OptionsFile::set"
+helper = "set.rs"
+bindings = [
+  { name = "file", ty = "&mut OptionsFile", value = "&mut *self" },
+  { name = "key", ty = "&str", value = "key" },
+  { name = "value", ty = "&V", value = "&value" },
+]
+
+# `horizon-ctl options-set mouseSensitivity` uses the same extended range.
+[[injection]]
+id = "set-text"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client_render::options_file::OptionsFile::set_text"
+helper = "set_text.rs"
+bindings = [
+  { name = "file", ty = "&mut OptionsFile", value = "&mut *self" },
+  { name = "key", ty = "&str", value = "key" },
+  { name = "text", ty = "&str", value = "text" },
+]
