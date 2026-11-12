@@ -25,3 +25,6 @@ run
 
 # Packaged native mods
 *.hnmod
+
+# Minisign secret keys (never commit)
+*.key

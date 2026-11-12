@@ -66,6 +66,24 @@ The mod is pinned to the Horizon Nightly of **2026-11-08**
 sensitivity option and the `options.txt` codec, so a different Horizon commit
 may need its target lines updated.
 
+## Release signing
+
+Release `.hnmod` files are signed with [minisign](https://jedisct1.github.io/minisign/).
+The public key is committed as `subsense.pub`:
+
+```text
+RWT0MtEkvup51zcIJyiEsI7EOBwbDXt3zeboV10TRGsX3Nz+kdhcusdk
+```
+
+Verify a downloaded release:
+
+```sh
+minisign -Vm subsense-1.0.0.hnmod -p subsense.pub
+```
+
+The `.minisig` file is published beside the `.hnmod` on the GitHub release, and
+the same signature is embedded in the registry entry.
+
 ## Development
 
 The range math is a standalone Rust library with unit tests:
