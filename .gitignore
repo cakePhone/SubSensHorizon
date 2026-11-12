@@ -19,3 +19,9 @@ hs_err_pid*
 
 # Common working directory
 run
+
+# Rust build output
+/target
+
+# Packaged native mods
+*.hnmod

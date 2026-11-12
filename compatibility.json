@@ -1,0 +1,11 @@
+{
+  "horizon_revision": "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca",
+  "source_sha256": {
+    "crates/horizon-client-render/src/options_file.rs": "74bc8eba029525fff976e203d7dd7e53f079db11afb8ab1493fd13ebb0f84582",
+    "crates/horizon-client-render/src/options_ui.rs": "686458a8989efb4e6e7de3dc6df95c840b23f3bdd9b397e36611462e9d570fca"
+  },
+  "horizon_repository": "https://github.com/horizon-rust/horizon",
+  "horizon_mixins_repository": "https://github.com/horizon-rust/horizon-mixins",
+  "horizon_mixins_revision": "0d6b103c70633d8fd9443d8d0acd3aadaacedb06",
+  "mixin_schema": 6
+}
