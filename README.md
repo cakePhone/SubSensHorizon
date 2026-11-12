@@ -97,6 +97,13 @@ targeted tests cover loading and saving negative values, the exact
 `options.txt` round trip, the extended slider range and the untouched-value
 preservation.
 
+## Credits
+
+SubSens was created by Maciej "ChikaraDude" Panocha. The original Java/Fabric
+mod is at [chikaradude/SubSens](https://github.com/chikaradude/SubSens). This
+Horizon port keeps the original MIT licence and is not affiliated with Mojang
+or Microsoft.
+
 ## AI note
 
 This Horizon port was made with the use of AI, using the model
