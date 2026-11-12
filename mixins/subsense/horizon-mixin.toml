@@ -22,6 +22,13 @@ file = "crates/horizon-client-render/src/options_file.rs"
 name = "subsense"
 source = "options_file.rs"
 
+# Options screen: the extended slider and its percentage label.
+[[module]]
+id = "ui"
+file = "crates/horizon-client-render/src/options_ui.rs"
+name = "subsense"
+source = "options_ui.rs"
+
 # `OptionsFile::apply` finishes the load; keep the negative mouseSensitivity
 # that the vanilla UnitDouble codec discarded in `try_apply`.
 [[injection]]
@@ -71,4 +78,42 @@ bindings = [
   { name = "file", ty = "&mut OptionsFile", value = "&mut *self" },
   { name = "key", ty = "&str", value = "key" },
   { name = "text", ty = "&str", value = "text" },
+]
+
+# The slider position spans -1/3..=1 rather than 0..=1.
+[[injection]]
+id = "kind"
+kind = "RETURN"
+target = "horizon_client_render::options_ui::Opt::kind"
+helper = "kind.rs"
+bindings = [
+  { name = "value", ty = "Kind", value = "$value" },
+  { name = "this", ty = "Opt", value = "self" },
+  { name = "s", ty = "&Settings", value = "&*s" },
+]
+
+# Moving the slider maps its 0..=1 position back onto the extended range,
+# preserving an exact loaded value when the position did not change.
+[[injection]]
+id = "set-slider"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client_render::options_ui::Opt::set_slider"
+helper = "set_slider.rs"
+bindings = [
+  { name = "this", ty = "Opt", value = "self" },
+  { name = "s", ty = "&mut Settings", value = "&mut *s" },
+  { name = "v", ty = "f32", value = "v" },
+]
+
+# Negative values show as negative percentages instead of `off`.
+[[injection]]
+id = "label"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client_render::options_ui::Opt::label"
+helper = "label.rs"
+bindings = [
+  { name = "this", ty = "Opt", value = "self" },
+  { name = "s", ty = "&Settings", value = "&*s" },
 ]
