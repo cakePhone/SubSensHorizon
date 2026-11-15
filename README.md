@@ -83,8 +83,8 @@ Verify a downloaded release:
 minisign -Vm subsense-1.0.1.hnmod -p subsense.pub
 ```
 
-The `.minisig` file is published beside the `.hnmod` on the GitHub release, and
-the same signature is embedded in the registry entry.
+The `.minisig` file is published beside the `.hnmod` on the GitHub release;
+the registry reads it from there when it tracks the release.
 
 ## Development
 
