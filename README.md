@@ -56,13 +56,13 @@ Build the source-only `.hnmod`:
 python3 tools/package.py
 ```
 
-It writes `target/subsense-1.0.0.hnmod`. Put that file in Horizon's
+It writes `target/subsense-1.0.1.hnmod`. Put that file in Horizon's
 `horizon-native-mods/` folder, then enable **SubSens** in Options → Mods and
 let the launcher build the native game. Native mods are compiled into a copy of
 the game and run with your user rights, so only install source you trust.
 
-The mod is pinned to the Horizon Nightly of **2026-11-08**
-(`fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca`). It changes the vanilla
+The mod is pinned to the Horizon Nightly of **2026-11-13**
+(`9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0`). It changes the vanilla
 sensitivity option and the `options.txt` codec, so a different Horizon commit
 may need its target lines updated.
 
@@ -78,7 +78,7 @@ RWT0MtEkvup51zcIJyiEsI7EOBwbDXt3zeboV10TRGsX3Nz+kdhcusdk
 Verify a downloaded release:
 
 ```sh
-minisign -Vm subsense-1.0.0.hnmod -p subsense.pub
+minisign -Vm subsense-1.0.1.hnmod -p subsense.pub
 ```
 
 The `.minisig` file is published beside the `.hnmod` on the GitHub release, and
@@ -110,7 +110,7 @@ horizon-mixins check \
 ```
 
 The port was tested against the pristine source export of
-`fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca` with horizon-mixins 0.6.0. The
+`9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0` with horizon-mixins 0.6.0 (`5a64af938ec8`). The
 targeted tests cover loading and saving negative values, the exact
 `options.txt` round trip, the extended slider range and the untouched-value
 preservation.

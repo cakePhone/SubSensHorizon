@@ -1,12 +1,12 @@
 [mod]
 id = "subsense"
-version = "1.0.0"
+version = "1.0.1"
 priority = 100
 
-# The installed Nightly 2026-11-08. SubSens changes the vanilla sensitivity
+# The installed Nightly 2026-11-13. SubSens changes the vanilla sensitivity
 # option and options.txt codec, so it pins one Horizon source revision.
 [compatibility]
-horizon_revision = "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca"
+horizon_revision = "9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0"
 
 # The range math, shared by the options file and the options screen.
 [[module]]

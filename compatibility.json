@@ -1,11 +1,11 @@
 {
-  "horizon_revision": "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca",
+  "horizon_revision": "9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0",
   "source_sha256": {
     "crates/horizon-client-render/src/options_file.rs": "74bc8eba029525fff976e203d7dd7e53f079db11afb8ab1493fd13ebb0f84582",
-    "crates/horizon-client-render/src/options_ui.rs": "686458a8989efb4e6e7de3dc6df95c840b23f3bdd9b397e36611462e9d570fca"
+    "crates/horizon-client-render/src/options_ui.rs": "358d7c7cad086bee3b42132fbf2e01deb60222702d126533d904c641a9af7dc5"
   },
   "horizon_repository": "https://github.com/horizon-rust/horizon",
   "horizon_mixins_repository": "https://github.com/horizon-rust/horizon-mixins",
-  "horizon_mixins_revision": "0d6b103c70633d8fd9443d8d0acd3aadaacedb06",
+  "horizon_mixins_revision": "5a64af938ec86b00d53d16a408aabc0038fb3e57",
   "mixin_schema": 6
 }
