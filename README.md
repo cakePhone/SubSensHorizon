@@ -64,7 +64,9 @@ the game and run with your user rights, so only install source you trust.
 The mod is pinned to the Horizon Nightly of **2026-11-13**
 (`9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0`). It changes the vanilla
 sensitivity option and the `options.txt` codec, so a different Horizon commit
-may need its target lines updated.
+may need its target lines updated. The 2026-11-13 Nightly added no native hook
+for the vanilla options screen, so SubSens still patches the sensitivity codec
+and slider directly.
 
 ## Release signing
 
