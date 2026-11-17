@@ -28,3 +28,11 @@ run
 
 # Minisign secret keys (never commit)
 *.key
+
+# Horizon mod API build state
+.horizon/
+horizon-mod/target/
+
+# Packaged mods
+*.hmod
+uses.json
