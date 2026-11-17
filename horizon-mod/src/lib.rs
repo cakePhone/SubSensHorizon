@@ -17,7 +17,7 @@ struct Mod;
 impl Hooks for Mod {
     fn register(&self, registrar: &mut dyn Registrar, _: &RegistrationContext) {
         let _ = registrar.register_setting(SettingSpec::tooltip(
-            SettingSpec::toggle("enabled", "subsense.setting.enabled", true),
+            SettingSpec::toggle("enabled", "subsense.setting.enabled", false),
             "subsense.setting.enabled.tooltip",
         ));
         let _ = registrar.register_setting(SettingSpec::tooltip(
@@ -34,7 +34,7 @@ impl Hooks for Mod {
     }
 
     fn calculate_player_turn(&self, host: &dyn ClientHost, event: &mut CalculatePlayerTurnEvent) {
-        let enabled = host.setting_bool("enabled").unwrap_or(true);
+        let enabled = host.setting_bool("enabled").unwrap_or(false);
         let sensitivity = host.setting_f64("sensitivity").unwrap_or(0.5);
         if let Some(value) = effective_sensitivity(enabled, sensitivity) {
             event.mouse_sensitivity = value;

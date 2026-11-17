@@ -13,7 +13,7 @@ The original Java/Fabric mod is kept in [`old-java/`](old-java/).
 
 - A sensitivity setting from `-1/3` to `1`
 - `-1/3` is true zero camera movement
-- An on/off toggle
+- An on/off toggle, off until you enable it
 - No separate config files; the setting is on **Options → Mods → SubSens**
 - No dependencies beyond the Horizon mod SDK
 
@@ -28,9 +28,10 @@ vanilla mouse sensitivity for the turn, and lets a mod replace it. SubSens
 replaces it with its own setting, so the whole range is available without
 patching the vanilla options screen.
 
-The setting is a slider on the mod's page. A step of `0.0001` keeps the value
-precise enough for normal DPI conversion; the exact value is stored by the
-game's mod settings system, not in `options.txt`.
+On **Options → Mods → SubSens**, turn on **Enable SubSens** and set the
+**Sensitivity** slider. The mod does nothing while the toggle is off. A step of
+`0.0001` keeps the value precise enough for normal DPI conversion; the exact
+value is stored by the game's mod settings system, not in `options.txt`.
 
 ## Calculating the correct value
 
@@ -50,8 +51,8 @@ desired DPI  = 800
 desired mouseSensitivity = -0.01539956185845284
 ```
 
-Set that value on **Options → Mods → SubSens**. The nearest slider step is
-`-0.0154`.
+Enable SubSens and set that value on **Options → Mods → SubSens**. The nearest
+slider step is `-0.0154`.
 
 ## Requirements
 
