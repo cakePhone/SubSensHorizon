@@ -1,0 +1,13 @@
+id = "subsense"
+name = "SubSens"
+version = "2.0.0"
+description = "Allows even lower mouse sensitivity than vanilla, down to true zero."
+authors = ["cakePhone"]
+api = "0.2"
+side = "client"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "baea25493a165df5c4e51e720092d00fea2f91da"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"

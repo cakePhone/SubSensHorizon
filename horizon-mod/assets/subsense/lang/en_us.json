@@ -1,0 +1,6 @@
+{
+  "subsense.setting.enabled": "Enable SubSens",
+  "subsense.setting.enabled.tooltip": "Use SubSens' sensitivity instead of the vanilla slider.",
+  "subsense.setting.sensitivity": "Sensitivity",
+  "subsense.setting.sensitivity.tooltip": "Mouse sensitivity from -1/3 (true zero) to 1. The vanilla slider is ignored while SubSens is enabled."
+}

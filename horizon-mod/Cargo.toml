@@ -1,0 +1,11 @@
+[package]
+name = "subsense"
+version = "2.0.0"
+edition = "2024"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+# The launcher fetches the pinned SDK into .horizon/sdk/ before building.
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
