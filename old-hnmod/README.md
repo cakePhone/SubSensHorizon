@@ -1,3 +1,7 @@
+# Old native-mixin SubSens (.hnmod)
+
+This is the pre-mod-API port. Launcher 0.2.70 replaced the `.hnmod`/horizon-mixins system with the mod API, so this code no longer loads. It is kept for reference.
+
 # SubSens
 
 **SubSens** is a simple and lightweight mod that allows even lower sensitivity in Minecraft.
