@@ -1,6 +1,6 @@
 id = "subsense"
 name = "SubSens"
-version = "2.0.0"
+version = "2.0.1"
 description = "Allows even lower mouse sensitivity than vanilla, down to true zero."
 authors = ["cakePhone"]
 api = "0.2"
